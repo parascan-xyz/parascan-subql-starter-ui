@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import Homepage from "./pages/Homepage"
@@ -30,7 +30,7 @@ const linkPage = [
 function App() {
   return (
     <Box>
-      <Router>
+      <BrowserRouter basename="/parascan-subql-starter-ui">
         <Navbar />
         <br />
         <Switch>
@@ -42,7 +42,7 @@ function App() {
             );
           })}
         </Switch>
-      </Router>
+      </BrowserRouter>
     </Box>
   );
 }
