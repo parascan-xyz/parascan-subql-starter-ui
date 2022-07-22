@@ -1,4 +1,5 @@
 import { Link } from "@chakra-ui/react";
+import { Link as ReactLink } from "react-router-dom";
 import { FieldPolicy, InMemoryCache } from "@apollo/client";
 
 export const ENDPOINT = "https://parascan.parami.io";
@@ -83,7 +84,7 @@ export const timeSince = (date: number | string) => {
 
 export const BlockLink = (block: string) => {
   return (
-    <Link href={`/block/${block}`} color="blue.600">
+    <Link as={ReactLink} to={`/block/${block}`} color="blue.600">
       {block}
     </Link>
   );
@@ -91,7 +92,7 @@ export const BlockLink = (block: string) => {
 
 export const ExtrinsicLink = (extrinsic: string) => {
   return (
-    <Link href={`/extrinsic/${extrinsic}`} color="blue.600">
+    <Link as={ReactLink} to={`/extrinsic/${extrinsic}`} color="blue.600">
       {extrinsic}
     </Link>
   );
@@ -99,7 +100,7 @@ export const ExtrinsicLink = (extrinsic: string) => {
 
 export const AccountLink = (account: string) => {
   return (
-    <Link href={`/account/${account}`} color="blue.600">
+    <Link as={ReactLink} to={`/account/${account}`} color="blue.600">
       {truncateText(account)}
     </Link>
   );
